@@ -1,19 +1,21 @@
 import string
 
 def word_frequency(sentence):
+    word_count = {}
+    translator = str.maketrans("", "", string.punctuation)
 
-# Remove punctuation and convert to lowercase
-translator = str.maketrans("", "", string.punctuation)
-sentence = sentence.translate(translator).lower()
+    words = sentence.lower().translate(translator).split()
 
-# Split the sentence into words
-words = sentence.split()
+    for word in words:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
 
-# Create a dictionary to store word frequencies
-frequency_dict = {}
+    return word_count
 
-# Count the frequency of each word
-for word in words:
-    frequency_dict[word] = frequency_dict.get(word, 0) + 1
 
-return frequency_dict
+# Test case
+sentence = "This is a test sentence. This sentence is a test."
+result = word_frequency(sentence)
+print(result)
