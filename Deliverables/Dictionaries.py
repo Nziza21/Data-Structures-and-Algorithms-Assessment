@@ -15,7 +15,6 @@ def word_frequency(sentence):
     return word_count
 
 
-# Test case
 sentence = "This is a test sentence. This sentence is a test."
 result = word_frequency(sentence)
 print(result)
