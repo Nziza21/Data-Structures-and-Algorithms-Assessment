@@ -22,4 +22,3 @@ expression2 = "([)]"
 print(is_balanced(expression1))  # Output: True
 print(is_balanced(expression2))  # Output: False
 
-
